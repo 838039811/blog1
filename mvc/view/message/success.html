@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1><?=$content?></h1>
+        <span id="seconds"><?=$seconds?></span>秒后跳转
+        <a href="<?=$url?>">立即跳转</a>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var i=document.getElementById('seconds');
+    var v=i.innerHTML;
+    setInterval(function(){
+        v--;
+        if(v<=0){
+            location.href='<?=$url?>';
+        }else{
+            i.innerHTML=v;
+        }
+    },1000);
+    </script>
